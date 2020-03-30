@@ -2,7 +2,7 @@ defmodule ConflictTargetIssue.Readers.Reader do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "reader" do
+  schema "readers" do
     field :email, :string
 
     timestamps()

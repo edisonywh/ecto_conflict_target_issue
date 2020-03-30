@@ -15,7 +15,7 @@ defmodule ConflictTargetIssue.Readers do
     |> Reader.changeset(attrs)
     |> Repo.insert(
       on_conflict: [set: [updated_at: now]],
-      conflict_target: [:email],
+      conflict_target: {:constraint, :readers_email_index},
       returning: [:id]
     )
   end
