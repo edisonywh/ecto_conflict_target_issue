@@ -8,6 +8,6 @@ defmodule ConflictTargetIssue.Repo.Migrations.CreateReader do
       timestamps()
     end
 
-    create unique_index(:reader, [:email])
+    create unique_index(:reader, "lower(email)", name: :readers_email_index)
   end
 end
